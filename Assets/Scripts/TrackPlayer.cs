@@ -5,7 +5,7 @@ using UnityEngine;
 public class TrackPlayer : MonoBehaviour {
     
     public GameObject Player;
-    public float follow_speed = 3f;
+    private float follow_speed = 2.5f;
     private Vector3 distance_from_player;
 
     void Update(){
