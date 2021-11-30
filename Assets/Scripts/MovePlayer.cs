@@ -12,7 +12,7 @@ public class MovePlayer : MonoBehaviour {
     
     void Start() {
         myRigidbody = GetComponent<Rigidbody>();
-        mySpeed = 5.0f;
+        mySpeed = 3.5f;
         forward = new Vector3(0, 0, 1);
         back = new Vector3(0, 0, -1);
         right = new Vector3(1, 0, 0);
