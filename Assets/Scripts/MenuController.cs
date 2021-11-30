@@ -12,6 +12,8 @@ public class MenuController : MonoBehaviour {
     [SerializeField] private TMP_InputField UsernameInput;
     [SerializeField] private TMP_InputField CreateGameInput;
     [SerializeField] private TMP_InputField JoinGameInput;
+    
+    [SerializeField] private GameObject StartButton;
 
     public void Awake() {
         PhotonNetwork.ConnectUsingSettings(VersionName);
@@ -24,5 +26,18 @@ public class MenuController : MonoBehaviour {
     private void OnConnectedToMaster() {
         PhotonNetwork.JoinLobby(TypedLobby.Default);
         Debug.Log("Connected!");
+    }
+
+    public void ChangeUsernameInput() {
+        if (UsernameInput.text.Length >= 3) {
+            StartButton.SetActive(true);
+        } else {
+            StartButton.SetActive(false);
+        }
+    }
+
+    public void SetUserName() {
+        UsernameMenu.SetActive(false);
+        PhotonNetwork.playerName = UsernameInput.text;
     }
 }

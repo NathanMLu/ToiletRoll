@@ -298,7 +298,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &63295604
 RectTransform:
   m_ObjectHideFlags: 0
@@ -378,7 +378,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 63295607}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1471551156}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+        m_MethodName: SetUserName
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &63295607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1012,7 +1024,19 @@ MonoBehaviour:
       m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1471551156}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+        m_MethodName: ChangeUsernameInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnTouchScreenKeyboardStatusChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1970,9 +1994,10 @@ MonoBehaviour:
   VersionName: 0.1
   UsernameMenu: {fileID: 1659579135}
   ConnectPanel: {fileID: 1407694011}
-  UsernameInput: {fileID: 0}
-  CreateGameInput: {fileID: 0}
-  JoinGameInput: {fileID: 0}
+  UsernameInput: {fileID: 402667888}
+  CreateGameInput: {fileID: 1994426226}
+  JoinGameInput: {fileID: 1458072673}
+  StartButton: {fileID: 63295603}
 --- !u!4 &1471551157
 Transform:
   m_ObjectHideFlags: 0
@@ -2378,7 +2403,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1659579136
 RectTransform:
   m_ObjectHideFlags: 0
