@@ -5,6 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - Walls
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - camera
   layers:
   - Default
   - TransparentFX

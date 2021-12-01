@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
 public class MovePlayer : Photon.MonoBehaviour {
@@ -12,9 +9,9 @@ public class MovePlayer : Photon.MonoBehaviour {
     private Vector3 right;
     private Vector3 left;
     
-    public PhotonView PhotonView;
+    public PhotonView photonView;
     public GameObject PlayerCamera;
-    public TextMeshProUGUI PlayerNameText;
+    public TextMeshPro PlayerNameText;
     
     void Start() {
         myRigidbody = GetComponent<Rigidbody>();
@@ -28,7 +25,11 @@ public class MovePlayer : Photon.MonoBehaviour {
     private void Awake() {
         if (photonView.isMine) {
             PlayerCamera.SetActive(true);
-        }
+			PlayerNameText.text = PhotonNetwork.playerName;
+        } else {
+			PlayerNameText.text = photonView.owner.NickName;
+			PlayerNameText.color = Color.cyan;
+		}
     }
 
     public void Update() {

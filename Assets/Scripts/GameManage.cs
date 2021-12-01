@@ -6,17 +6,17 @@ using UnityEngine.UI;
 public class GameManage : MonoBehaviour {
     public GameObject PlayerPrefab;
     public GameObject SceneCamera;
+    private int count = 0;
 
     public void Start() {
         SpawnPlayer();
     }
     
     public void SpawnPlayer() {
-        Debug.Log("Trying to spawn player");
-
-        PhotonNetwork.Instantiate(PlayerPrefab.name, new Vector3(0,0,0), Quaternion.identity, 0);
-        
+        Debug.Log("Spawning new player! " + PhotonNetwork.playerName);
+        GameObject temp = PhotonNetwork.Instantiate(PlayerPrefab.name, new Vector3(0,0,0), Quaternion.identity, 0);
+        temp.name = count.ToString();
         SceneCamera.SetActive(false);
-        
+        count++;
     }
 }

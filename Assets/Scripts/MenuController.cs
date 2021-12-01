@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class MenuController : MonoBehaviour {
+public class  MenuController : MonoBehaviour {
     [SerializeField] private string VersionName = "0.1";
     [SerializeField] private GameObject UsernameMenu;
     [SerializeField] private GameObject ConnectPanel;
@@ -25,7 +25,7 @@ public class MenuController : MonoBehaviour {
 
     private void OnConnectedToMaster() {
         PhotonNetwork.JoinLobby(TypedLobby.Default);
-        Debug.Log("Connected!");
+        Debug.Log("Connected to Photon!");
     }
 
     public void ChangeUsernameInput() {
