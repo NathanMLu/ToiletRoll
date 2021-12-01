@@ -32,7 +32,7 @@ public class MovePlayer : Photon.MonoBehaviour {
     }
 
     public void Update() {
-        if (photonView.isMine && gameObject.tag == "Player") {
+        if (photonView.isMine) {
             if (Input.GetKey(KeyCode.UpArrow)) {
                 myRigidbody.velocity = forward * mySpeed;
             }

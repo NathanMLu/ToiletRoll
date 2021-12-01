@@ -6932,7 +6932,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 0.92
   m_Range: 10
   m_SpotAngle: 30
@@ -13595,7 +13595,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa1c76b17cbace0438a7a4670584cbf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerPrefab: {fileID: 8177319266663090561, guid: 7a0970cce275ded4baa9bc0bf46eb878, type: 3}
+  PlayerPrefab: {fileID: 8244063604376874556, guid: 0f4b17049426d0b4885521181bc258f3, type: 3}
   SceneCamera: {fileID: 963194225}
 --- !u!4 &1302032356
 Transform:
