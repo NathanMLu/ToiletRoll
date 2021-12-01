@@ -6,11 +6,12 @@ public class LockRotation : MonoBehaviour {
     public GameObject Player;
     private Vector3 offset;
 
-    void Start() {
+    private void Start() {
         offset = new Vector3(0f, 1f, 0f);
+        transform.position = Player.transform.position + offset;
     }
     
-    void Update() {
+    private void Update() {
         transform.position = Player.transform.position + offset;
     }
 }

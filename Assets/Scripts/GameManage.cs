@@ -13,7 +13,6 @@ public class GameManage : MonoBehaviour {
     }
     
     public void SpawnPlayer() {
-        Debug.Log("Spawning new player! " + PhotonNetwork.playerName);
         GameObject temp = PhotonNetwork.Instantiate(PlayerPrefab.name, new Vector3(0,0,0), Quaternion.identity, 0);
         temp.name = count.ToString();
         SceneCamera.SetActive(false);
