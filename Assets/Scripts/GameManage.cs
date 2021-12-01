@@ -12,14 +12,11 @@ public class GameManage : MonoBehaviour {
     }
     
     public void SpawnPlayer() {
-        float random_location = Random.Range(-1f, 1f);
-        
-        PhotonNetwork.Instantiate(PlayerPrefab.name, new Vector3(
-                transform.position.x * random_location,
-                transform.position.y,
-                transform.position.z * random_location),
-            Quaternion.identity, 0);
+        Debug.Log("Trying to spawn player");
+
+        PhotonNetwork.Instantiate(PlayerPrefab.name, transform.position, Quaternion.identity, 0);
         
         SceneCamera.SetActive(false);
+        
     }
 }
