@@ -25,16 +25,18 @@ public class MovePlayer : Photon.MonoBehaviour {
         left = new Vector3(-1, 0, 0);
         
         spawnPoints[0] = new Vector3(11f, 0.25f, -11f);
-        spawnPoints[0] = new Vector3(11f, 0.25f, 11f);
-        spawnPoints[0] = new Vector3(-11f, 0.25f, -11f);
-        spawnPoints[0] = new Vector3(-11f, 0.25f, 11f);
+        spawnPoints[1] = new Vector3(11f, 0.25f, 11f);
+        spawnPoints[2] = new Vector3(-11f, 0.25f, -11f);
+        spawnPoints[3] = new Vector3(-11f, 0.25f, 11f);
         
         transform.position = spawnPoints[Random.Range(0, 3)];
     }
     
     private void Awake() {
         if (photonView.isMine) {
+            // The most important line :)
             PlayerCamera.SetActive(true);
+            
 			PlayerNameText.text = PhotonNetwork.playerName;
         } else {
 			PlayerNameText.text = photonView.owner.NickName;
