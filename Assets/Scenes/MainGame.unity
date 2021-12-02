@@ -7842,7 +7842,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &784358380
 GameObject:
@@ -10366,7 +10366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0209c987bea565c42823a1335f33e0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 8177319266663090561, guid: 7a0970cce275ded4baa9bc0bf46eb878, type: 3}
+  Player: {fileID: 8244063604376874556, guid: 0f4b17049426d0b4885521181bc258f3, type: 3}
 --- !u!1 &981435221
 GameObject:
   m_ObjectHideFlags: 0
@@ -13516,7 +13516,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1304802465
 GameObject:
@@ -20901,7 +20901,7 @@ GameObject:
   - component: {fileID: 1994895256}
   - component: {fileID: 1994895255}
   m_Layer: 0
-  m_Name: Directional Light (1)
+  m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20982,7 +20982,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &2008146522
 GameObject:

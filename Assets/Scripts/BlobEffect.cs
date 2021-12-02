@@ -6,7 +6,7 @@ public class BlobEffect : MonoBehaviour {
     
     public float Intensity = 1f;
     public float Mass = 1.5f;
-    public float stiffness = 0.1f;
+    public float stiffness = 0.5f;
     public float damping = 0.75f;
 
     private Mesh OriginalMesh, MeshClone;
