@@ -14,8 +14,10 @@ public class MovePlayer : Photon.MonoBehaviour {
     public PhotonView photonView;
     public GameObject PlayerCamera;
     public TextMeshPro PlayerNameText;
-    
-    void Start() {
+
+    private GameObject GameManager;
+
+    private void Awake() {
         myRigidbody = GetComponent<Rigidbody>();
         mySpeed = 3.5f;
         
@@ -30,9 +32,10 @@ public class MovePlayer : Photon.MonoBehaviour {
         spawnPoints[3] = new Vector3(-11f, 0.25f, 11f);
         
         transform.position = spawnPoints[Random.Range(0, 3)];
-    }
-    
-    private void Awake() {
+        
+        GameManager = GameObject.FindGameObjectWithTag("GameController");
+        Debug.Log(GameManager);
+        
         if (photonView.isMine) {
             // The most important line :)
             PlayerCamera.SetActive(true);
@@ -42,24 +45,32 @@ public class MovePlayer : Photon.MonoBehaviour {
 			PlayerNameText.text = photonView.owner.NickName;
 			PlayerNameText.color = Color.cyan;
 		}
-        
-        
+
+        GameManager.GetComponent<GameManager>().StartGame();
     }
 
     public void Update() {
-        if (photonView.isMine) {
-            if (Input.GetKey(KeyCode.UpArrow)) {
+        if (photonView.isMine && GameManager.GetComponent<GameManager>().IsRunning()) {
+            if ((Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) && transform.position.y < 1.1f) {
                 myRigidbody.velocity = forward * mySpeed;
             }
-            else if (Input.GetKey(KeyCode.DownArrow)) {
+            else if ((Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S)) && transform.position.y < 1.1f) {
                 myRigidbody.velocity = back * mySpeed;
             }
-            else if (Input.GetKey(KeyCode.RightArrow)) {
+            else if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D)) && transform.position.y < 1.1f) {
                 myRigidbody.velocity = right * mySpeed;
             }
-            else if (Input.GetKey(KeyCode.LeftArrow)) {
+            else if ((Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A)) && transform.position.y < 1.1f) {
                 myRigidbody.velocity = left * mySpeed;
             }
+        }
+
+        if (Input.GetKey(KeyCode.P)) {
+            GameManager.GetComponent<GameManager>().PauseGame();
+        }
+
+        if (Input.GetKey(KeyCode.O)) {
+            GameManager.GetComponent<GameManager>().StartGame();
         }
     }
 }
