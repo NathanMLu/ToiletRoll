@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour {
     public GameObject PlayerPrefab;
     public GameObject SceneCamera;
+    public GameObject PauseCanvas;
 
     private bool running = false;
 
@@ -23,10 +24,22 @@ public class GameManager : MonoBehaviour {
     }
 
     public void PauseGame() {
+        PauseCanvas.SetActive(true);
         running = false;
     }
 
     public void StartGame() {
         running = true;
+        PauseCanvas.SetActive(false);
+    }
+
+    public void ShowMenu() {
+        PauseCanvas.SetActive(true);
+    }
+        
+    public void BackToMenu() {
+        PhotonNetwork.LeaveRoom();
+        PauseCanvas.SetActive(false);
+        PhotonNetwork.LoadLevel("MainMenu");
     }
 }
