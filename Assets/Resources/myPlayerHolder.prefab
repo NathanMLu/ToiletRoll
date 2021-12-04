@@ -631,4 +631,4 @@ MonoBehaviour:
   photonView: {fileID: 2014087841781730817}
   PlayerCamera: {fileID: 5615044481602530768}
   PlayerNameText: {fileID: 1175238422458444170}
-  GameManager: {fileID: 7745850688046237240, guid: 53d993abfea6fb84d8fc9de2eb3bec27, type: 3}
+  TrackPlayer: {fileID: 5515104797540178703}

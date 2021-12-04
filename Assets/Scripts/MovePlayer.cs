@@ -14,6 +14,7 @@ public class MovePlayer : Photon.MonoBehaviour {
     public PhotonView photonView;
     public GameObject PlayerCamera;
     public TextMeshPro PlayerNameText;
+    public TrackPlayer TrackPlayer;
 
     private GameObject GameManager;
 
@@ -50,7 +51,7 @@ public class MovePlayer : Photon.MonoBehaviour {
     }
 
     public void Update() {
-        if (photonView.isMine && GameManager.GetComponent<GameManager>().IsRunning()) {
+        if (photonView.isMine && GameManager.GetComponent<GameManager>().IsRunning() && TrackPlayer.reachedStartingPosition()) {
             if ((Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) && transform.position.y < 1.1f) {
                 myRigidbody.velocity = forward * mySpeed;
             }
@@ -63,14 +64,6 @@ public class MovePlayer : Photon.MonoBehaviour {
             else if ((Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A)) && transform.position.y < 1.1f) {
                 myRigidbody.velocity = left * mySpeed;
             }
-        }
-
-        if (Input.GetKey(KeyCode.P)) {
-            GameManager.GetComponent<GameManager>().PauseGame();
-        }
-
-        if (Input.GetKey(KeyCode.O)) {
-            GameManager.GetComponent<GameManager>().StartGame();
         }
     }
 }

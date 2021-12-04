@@ -1,18 +1,37 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class TrackPlayer : MonoBehaviour {
+    private float followSpeed = 2.5f;
+    private bool started = false;
     
+    private Vector3 distanceFromPlayer;
     public GameObject Player;
-    private float follow_speed = 2.5f;
-    private Vector3 distance_from_player;
+    private GameObject GameManager;
 
-    void Update(){
-        distance_from_player = new Vector3(0f, 4.625f, -1.2f);
-        distance_from_player = Player.transform.position + distance_from_player;
-        distance_from_player = Vector3.MoveTowards(transform.position, distance_from_player, follow_speed*Time.deltaTime);
-        transform.position = distance_from_player;
-        
+    private void Start() {
+        GameManager = GameObject.FindGameObjectWithTag("GameController");
     }
+
+    private void Update(){
+        if (GameManager.GetComponent<GameManager>().IsRunning()) {
+            distanceFromPlayer = new Vector3(0f, 4.625f, -1.2f);
+            distanceFromPlayer = Player.transform.position + distanceFromPlayer;
+            distanceFromPlayer = Vector3.MoveTowards(transform.position, distanceFromPlayer, followSpeed * Time.deltaTime);
+            transform.position = distanceFromPlayer;
+        }
+    }
+
+    public bool reachedStartingPosition() {
+        if (transform.position == new Vector3(11f, 4.875f, -12.2f) ||
+            transform.position == new Vector3(11f, 4.875f, 9.8f) || 
+            transform.position == new Vector3(-11f, 4.875f, -12.2f) ||
+            transform.position == new Vector3(-11f, 4.875f, 9.8f)) {
+            started = true;
+        }
+        return started;
+    }
+    
 }
