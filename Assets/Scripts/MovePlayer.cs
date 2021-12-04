@@ -35,9 +35,9 @@ public class MovePlayer : Photon.MonoBehaviour {
         transform.position = spawnPoints[Random.Range(0, 3)];
         
         GameManager = GameObject.FindGameObjectWithTag("GameController");
-        Debug.Log(GameManager);
-        
+
         if (photonView.isMine) {
+            
             // The most important line :)
             PlayerCamera.SetActive(true);
             
@@ -52,6 +52,8 @@ public class MovePlayer : Photon.MonoBehaviour {
 
     public void Update() {
         if (photonView.isMine && GameManager.GetComponent<GameManager>().IsRunning() && TrackPlayer.reachedStartingPosition()) {
+            
+            // For basic player movement
             if ((Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) && transform.position.y < 1.1f) {
                 myRigidbody.velocity = forward * mySpeed;
             }
@@ -63,6 +65,12 @@ public class MovePlayer : Photon.MonoBehaviour {
             }
             else if ((Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A)) && transform.position.y < 1.1f) {
                 myRigidbody.velocity = left * mySpeed;
+            }
+            
+            // Check if they won
+            if (transform.position.x is < 2.2f and > -2.2f && transform.position.z is < 2.2f and > -2.2f) {
+                
+                GameManager.GetComponent<GameManager>().Winner(PhotonNetwork.playerName);
             }
         }
     }

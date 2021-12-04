@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using TMPro;
 
@@ -5,9 +6,12 @@ public class PanelController : MonoBehaviour {
 	[SerializeField] private GameObject MenuCanvas;
 	[SerializeField] private GameObject PauseCanvas;
 	[SerializeField] private GameObject DisplayPanel;
+	[SerializeField] private GameObject WinnerCanvas;
+	
 	
 	[SerializeField] private TMP_Text Title;
 	[SerializeField] private TMP_Text MainText;
+	[SerializeField] private TMP_Text WinnerNameText;
 
 	public void PauseCanvasOn() {
 		PauseCanvas.SetActive(true);
@@ -32,11 +36,32 @@ public class PanelController : MonoBehaviour {
 	public void DisplayPanelOff() {
 		DisplayPanel.SetActive(false);
 	}
+	
+	public void WinnerCanvasOff() {
+		WinnerCanvas.SetActive(false);
+	}
+	
+	public void WinnerCanvasOn() {
+		WinnerCanvas.SetActive(true);
+	}
 
 	public void DisplaySomething(string title, string mainText) {
 		Title.text = title;
 		MainText.text = mainText;
+
+		DisplayPanelOn();
+	}
+
+	public void SetWinner(string name) {
+		WinnerNameText.text = name;
 		
-		DisplayPanel.SetActive(true);
+		WinnerCanvasOn();
+	}
+
+	private void Update() {
+		if (Input.GetKey(KeyCode.Return)) {
+			MenuCanvasOff();
+			DisplayPanelOff();
+		}
 	}
 }

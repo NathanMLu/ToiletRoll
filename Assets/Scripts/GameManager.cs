@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour {
         PanelController.DisplayPanelOff();
         PanelController.MenuCanvasOff();
         SceneCamera.SetActive(false);
+        
+        PanelController.DisplaySomething("Race to the center!", "Avoid the traps and backstab\nother players to be number one!");
     }
     
     private void SpawnPlayer() {
@@ -36,12 +38,23 @@ public class GameManager : MonoBehaviour {
         PanelController.MenuCanvasOn();
     }
 
+    public void Winner(string playerName) {
+        //running = false;
+        
+        PanelController.PauseCanvasOff();
+        PanelController.DisplayPanelOff();
+        PanelController.MenuCanvasOff();
+        
+        PanelController.SetWinner(playerName);
+    }
+
     public void StartGame() {
         running = true;
         
         PanelController.PauseCanvasOn();
         PanelController.DisplayPanelOff();
         PanelController.MenuCanvasOff();
+        PanelController.WinnerCanvasOff();
     }
 
     public void BackToMenu() {
@@ -50,6 +63,7 @@ public class GameManager : MonoBehaviour {
         PanelController.PauseCanvasOff();
         PanelController.MenuCanvasOff();
         PanelController.DisplayPanelOff();
+        PanelController.WinnerCanvasOff();
         
         PhotonNetwork.LoadLevel("MainMenu");
     }
