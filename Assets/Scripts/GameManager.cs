@@ -17,7 +17,6 @@ public class GameManager : MonoBehaviour {
         SpawnPlayer();
         
         PanelController.PauseCanvasOn();
-        PanelController.DisplayPanelOff();
         PanelController.MenuCanvasOff();
         WinnerText.WinnerPanelOff();
         
@@ -57,7 +56,6 @@ public class GameManager : MonoBehaviour {
         
         PanelController.PauseCanvasOn();
         PanelController.MenuCanvasOff();
-        PanelController.DisplayPanelOff();
         WinnerText.WinnerPanelOff();
     }
 

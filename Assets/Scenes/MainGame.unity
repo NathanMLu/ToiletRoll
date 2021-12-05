@@ -25384,7 +25384,6 @@ GameObject:
   - component: {fileID: 2042791476}
   - component: {fileID: 2042791475}
   - component: {fileID: 2042791474}
-  - component: {fileID: 2042791479}
   m_Layer: 5
   m_Name: PanelController
   m_TagString: Untagged
@@ -25409,7 +25408,6 @@ MonoBehaviour:
   DisplayPanel: {fileID: 1577292424}
   Title: {fileID: 141563460}
   MainText: {fileID: 2134553648}
-  photonView: {fileID: 2042791479}
 --- !u!114 &2042791475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25495,33 +25493,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &2042791479
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2042791473}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ownerId: 0
-  group: 0
-  OwnerShipWasTransfered: 0
-  prefixBackup: -1
-  synchronization: 0
-  onSerializeTransformOption: 3
-  onSerializeRigidBodyOption: 2
-  ownershipTransfer: 0
-  ObservedComponents:
-  - {fileID: 0}
-  ObservedComponentsFoldoutOpen: 1
-  viewIdField: 2
-  instantiationId: 2
-  currentMasterID: -1
-  isRuntimeInstantiated: 0
 --- !u!1 &2045363530
 GameObject:
   m_ObjectHideFlags: 0
