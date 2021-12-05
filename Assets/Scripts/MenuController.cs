@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
 public class  MenuController : MonoBehaviour {
@@ -29,7 +26,7 @@ public class  MenuController : MonoBehaviour {
     }
 
     public void ChangeUsernameInput() {
-        if (UsernameInput.text.Length is >= 3 and <= 13) {
+        if (UsernameInput.text.Length is >= 3 and <= 12) {
             StartButton.SetActive(true);
         } else {
             StartButton.SetActive(false);

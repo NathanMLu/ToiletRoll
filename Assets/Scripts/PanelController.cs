@@ -6,43 +6,40 @@ public class PanelController : MonoBehaviour {
 	[SerializeField] private GameObject MenuCanvas;
 	[SerializeField] private GameObject PauseCanvas;
 	[SerializeField] private GameObject DisplayPanel;
-	[SerializeField] private GameObject WinnerCanvas;
-	
-	
+
 	[SerializeField] private TMP_Text Title;
 	[SerializeField] private TMP_Text MainText;
-	[SerializeField] private TMP_Text WinnerNameText;
+	
+	[SerializeField] private PhotonView photonView;
 
 	public void PauseCanvasOn() {
-		PauseCanvas.SetActive(true);
+		if (photonView.isMine) {
+			PauseCanvas.SetActive(true);
+		}
 	}
-	
+
 	public void PauseCanvasOff() {
-		PauseCanvas.SetActive(false);
+		if (photonView.isMine) {
+			PauseCanvas.SetActive(false);
+		}
 	}
 
 	public void MenuCanvasOn() {
-		MenuCanvas.SetActive(true);
+		if (photonView.isMine) {
+			MenuCanvas.SetActive(true);
+		}
 	}
-	
+
 	public void MenuCanvasOff() {
-		MenuCanvas.SetActive(false);
+		if (photonView.isMine) {
+			MenuCanvas.SetActive(false);
+		}
 	}
-	
-	public void DisplayPanelOn() {
-		DisplayPanel.SetActive(true);
-	}
-	
+
 	public void DisplayPanelOff() {
-		DisplayPanel.SetActive(false);
-	}
-	
-	public void WinnerCanvasOff() {
-		WinnerCanvas.SetActive(false);
-	}
-	
-	public void WinnerCanvasOn() {
-		WinnerCanvas.SetActive(true);
+		if (photonView.isMine) {
+			DisplayPanel.SetActive(false);
+		}
 	}
 
 	public void DisplaySomething(string title, string mainText) {
@@ -52,16 +49,9 @@ public class PanelController : MonoBehaviour {
 		DisplayPanelOn();
 	}
 
-	public void SetWinner(string name) {
-		WinnerNameText.text = name;
-		
-		WinnerCanvasOn();
-	}
-
-	private void Update() {
-		if (Input.GetKey(KeyCode.Return)) {
-			MenuCanvasOff();
-			DisplayPanelOff();
+	public void DisplayPanelOn() {
+		if (photonView.isMine) {
+			DisplayPanel.SetActive(true);
 		}
 	}
 }

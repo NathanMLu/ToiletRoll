@@ -5,9 +5,11 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
-    public GameObject PlayerPrefab;
-    public GameObject SceneCamera;
-    public PanelController PanelController;
+    [SerializeField] private GameObject PlayerPrefab;
+    [SerializeField] private GameObject SceneCamera;
+    
+    [SerializeField] private PanelController PanelController;
+    [SerializeField] private WinnerText WinnerText;
 
     private bool running;
     
@@ -17,6 +19,8 @@ public class GameManager : MonoBehaviour {
         PanelController.PauseCanvasOn();
         PanelController.DisplayPanelOff();
         PanelController.MenuCanvasOff();
+        WinnerText.WinnerPanelOff();
+        
         SceneCamera.SetActive(false);
         
         PanelController.DisplaySomething("Race to the center!", "Avoid the traps and backstab\nother players to be number one!");
@@ -39,22 +43,22 @@ public class GameManager : MonoBehaviour {
     }
 
     public void Winner(string playerName) {
-        //running = false;
+        running = false;
         
         PanelController.PauseCanvasOff();
         PanelController.DisplayPanelOff();
         PanelController.MenuCanvasOff();
         
-        PanelController.SetWinner(playerName);
+        WinnerText.setWinnerName(playerName);
     }
 
     public void StartGame() {
         running = true;
         
         PanelController.PauseCanvasOn();
-        PanelController.DisplayPanelOff();
         PanelController.MenuCanvasOff();
-        PanelController.WinnerCanvasOff();
+        PanelController.DisplayPanelOff();
+        WinnerText.WinnerPanelOff();
     }
 
     public void BackToMenu() {
@@ -63,8 +67,8 @@ public class GameManager : MonoBehaviour {
         PanelController.PauseCanvasOff();
         PanelController.MenuCanvasOff();
         PanelController.DisplayPanelOff();
-        PanelController.WinnerCanvasOff();
-        
+        WinnerText.WinnerPanelOff();
+
         PhotonNetwork.LoadLevel("MainMenu");
     }
 }
