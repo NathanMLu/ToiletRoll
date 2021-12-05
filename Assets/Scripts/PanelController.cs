@@ -40,6 +40,4 @@ public class PanelController : MonoBehaviour {
 
 		DisplayPanelOn();
 	}
-
-	
 }
