@@ -6,13 +6,14 @@ public class DisplayManager : MonoBehaviour {
 	public TMP_Text Title;
 	public TMP_Text MainText;
 	public PhotonView PhotonView;
+	public GameObject DisplayCanvas;
 
 	public void DisplayPanelOn() {
-		gameObject.SetActive(true);
+		DisplayCanvas.SetActive(true);
 	}
 
 	public void DisplayPanelOff() {
-		gameObject.SetActive(false);
+		DisplayCanvas.SetActive(false);
 	}
 
 	public void DisplaySomething(string title, string mainText) {
@@ -22,7 +23,6 @@ public class DisplayManager : MonoBehaviour {
 
 			DisplayPanelOn();
 		}
-		
 	}
 	
 	private void Update() {

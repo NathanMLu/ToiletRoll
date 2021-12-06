@@ -137,6 +137,7 @@ MonoBehaviour:
   Title: {fileID: 1017919558118052665}
   MainText: {fileID: 6539068340435095711}
   PhotonView: {fileID: 2299983414664074163}
+  DisplayCanvas: {fileID: 131880872819867428}
 --- !u!1 &1183789507471521234
 GameObject:
   m_ObjectHideFlags: 0

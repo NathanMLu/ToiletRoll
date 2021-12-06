@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class TrackPlayer : MonoBehaviour {
     private float followSpeed = 2.5f;
-    private bool started = false;
-    
+
     private Vector3 distanceFromPlayer;
     public GameObject Player;
     private GameObject GameManager;
