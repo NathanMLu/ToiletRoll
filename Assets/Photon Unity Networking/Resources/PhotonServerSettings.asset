@@ -14,16 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AppID: bae27487-c5a2-4c9d-9999-aa570211895a
   VoiceAppID: 
-  ChatAppID: 
-  HostType: 1
-  PreferredRegion: 1
+  ChatAppID: bae27487-c5a2-4c9d-9999-aa570211895a
+  HostType: 4
+  PreferredRegion: 0
   EnabledRegions: -1
-  Protocol: 5
+  Protocol: 0
   ServerAddress: 
   ServerPort: 5055
   VoiceServerPort: 5055
-  JoinLobby: 0
-  EnableLobbyStatistics: 0
+  JoinLobby: 1
+  EnableLobbyStatistics: 1
   PunLogging: 0
   NetworkLogging: 1
   RunInBackground: 1
