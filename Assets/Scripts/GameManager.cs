@@ -6,7 +6,6 @@ public class GameManager : MonoBehaviour {
     
     [SerializeField] private PanelController PanelController;
     [SerializeField] private WinnerText WinnerText;
-    [SerializeField] private DisplayManager DisplayManager;
 
     private bool running;
     
@@ -18,8 +17,6 @@ public class GameManager : MonoBehaviour {
         WinnerText.WinnerPanelOff();
         
         SceneCamera.SetActive(false);
-        
-        DisplayManager.DisplaySomething("Race to the center!", "Avoid the traps and backstab\nother players to be number one!");
     }
     
     private void SpawnPlayer() {
@@ -34,7 +31,6 @@ public class GameManager : MonoBehaviour {
         running = false;
         
         PanelController.PauseCanvasOff();
-        DisplayManager.DisplayPanelOff();
         PanelController.MenuCanvasOn();
     }
 
@@ -42,7 +38,6 @@ public class GameManager : MonoBehaviour {
         running = false;
         
         PanelController.PauseCanvasOff();
-        DisplayManager.DisplayPanelOff();
         PanelController.MenuCanvasOff();
         
         WinnerText.setWinnerName(playerName);
@@ -57,11 +52,11 @@ public class GameManager : MonoBehaviour {
     }
 
     public void BackToMenu() {
+        running = false;
         PhotonNetwork.LeaveRoom();
         
         PanelController.PauseCanvasOff();
         PanelController.MenuCanvasOff();
-        DisplayManager.DisplayPanelOff();
         WinnerText.WinnerPanelOff();
 
         PhotonNetwork.LoadLevel("MainMenu");

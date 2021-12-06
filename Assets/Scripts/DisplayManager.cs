@@ -7,6 +7,7 @@ public class DisplayManager : MonoBehaviour {
 	public TMP_Text MainText;
 	public PhotonView PhotonView;
 	public GameObject DisplayCanvas;
+	private GameObject GameManager;
 
 	public void DisplayPanelOn() {
 		DisplayCanvas.SetActive(true);
@@ -24,6 +25,10 @@ public class DisplayManager : MonoBehaviour {
 			DisplayPanelOn();
 		}
 	}
+
+	void Start() {
+		GameManager = GameObject.FindGameObjectWithTag("GameController");
+	}
 	
 	private void Update() {
 		if (Input.GetKeyDown(KeyCode.W) ||
@@ -35,6 +40,10 @@ public class DisplayManager : MonoBehaviour {
 		    Input.GetKeyDown(KeyCode.DownArrow) ||
 		    Input.GetKeyDown(KeyCode.UpArrow)) {
 			
+			DisplayPanelOff();
+		}
+
+		if (GameManager.GetComponent<GameManager>() == false) {
 			DisplayPanelOff();
 		}
 	}

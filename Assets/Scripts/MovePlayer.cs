@@ -16,6 +16,7 @@ public class MovePlayer : Photon.MonoBehaviour {
     public PhotonView photonView;
     public GameObject PlayerCamera;
     public TextMeshPro PlayerNameText;
+    public DisplayManager DisplayManager;
 
     private GameObject GameManager;
 
@@ -51,6 +52,7 @@ public class MovePlayer : Photon.MonoBehaviour {
 		}
 
         GameManager.GetComponent<GameManager>().StartGame();
+        DisplayManager.DisplaySomething("Race to the center!", "Avoid the traps and backstab\nother players to be number one!");
     }
 
     public void Update() {
