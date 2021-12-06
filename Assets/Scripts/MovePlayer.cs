@@ -118,4 +118,10 @@ public class MovePlayer : Photon.MonoBehaviour {
             }
         }
     }
+    
+    public void Restart() {
+        if (photonView.isMine) {
+            transform.position = spawnPoints[Random.Range(0, 3)];
+        }
+    }
 }
