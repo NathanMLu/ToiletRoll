@@ -1329,15 +1329,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7415273526459659969, guid: 675ee027266492740871dbd31f76df25, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 7415273526459659969, guid: 675ee027266492740871dbd31f76df25, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 7415273526459659969, guid: 675ee027266492740871dbd31f76df25, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.5
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 7415273526459659969, guid: 675ee027266492740871dbd31f76df25, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1703,6 +1703,5 @@ MonoBehaviour:
   PlayerCamera: {fileID: 5615044481602530768}
   PlayerNameText: {fileID: 1175238422458444170}
   DisplayManager: {fileID: 7841816159938406853}
-  GameManager: {fileID: 0}
   rolling: {fileID: 8300000, guid: f3bbc19853d24d64986ed8c9f697c6b3, type: 3}
   win: {fileID: 8300000, guid: b48c10c65d42bb34f91a3f3186460a66, type: 3}

@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class WallsCollider : MonoBehaviour {
 	[SerializeField] private LavaWalls lavaWalls;

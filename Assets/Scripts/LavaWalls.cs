@@ -7,6 +7,7 @@ public class LavaWalls : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision) {
         if (collision.gameObject.name == "ToiletPaper") {
+            collision.gameObject.GetComponent<MovePlayer>().LowerMoveRate();
             collision.gameObject.transform.Find("DisplayPanel").GetComponent<DisplayManager>().
                 DisplaySomething("You're so close", "yet so far. Touch the walls, and you\nwill be forced to restart!");
                 gameObject.SetActive(false);
@@ -14,6 +15,8 @@ public class LavaWalls : MonoBehaviour {
                 foreach (Transform child in Lava.transform) {
                     child.gameObject.GetComponent<MeshRenderer>().material = lavaMaterial;
                 }
+
+                lavafied = true;
             }
         }
     }
