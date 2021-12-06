@@ -23,9 +23,9 @@ MonoBehaviour:
   ServerPort: 5055
   VoiceServerPort: 5055
   JoinLobby: 0
-  EnableLobbyStatistics: 1
-  PunLogging: 2
-  NetworkLogging: 5
+  EnableLobbyStatistics: 0
+  PunLogging: 0
+  NetworkLogging: 1
   RunInBackground: 1
   RpcList:
   - Chat
