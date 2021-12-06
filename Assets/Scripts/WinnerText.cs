@@ -4,19 +4,25 @@ using UnityEngine;
 public class WinnerText : MonoBehaviour {
 	[SerializeField] private TMP_Text WinnerName;
 	[SerializeField] private GameObject WinnerCanvas;
-	[SerializeField] PhotonView PhotonView;
+	[SerializeField] private PhotonView PhotonView;
 
 	public void setWinnerName(string name) {
-		PhotonView.RPC("WinnerHelper", PhotonTargets.All, name);
+		PhotonView.RPC("WinnerHelper", PhotonTargets.AllBuffered, name);
+		WinnerHelper(name);
 	}
 
 	[PunRPC]
 	void WinnerHelper(string name) {
 		WinnerName.text = name;
-		WinnerCanvas.SetActive(true);
+		WinnerPanelOn();
 	}
 
 	public void WinnerPanelOff() {
 		WinnerCanvas.SetActive(false);
 	}
+
+	public void WinnerPanelOn() {
+		WinnerCanvas.SetActive(true);
+	}
+	
 }

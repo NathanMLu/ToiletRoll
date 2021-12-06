@@ -6,6 +6,7 @@ public class MovePlayer : Photon.MonoBehaviour {
     private float mySpeed;
     private float timeBeforeStart;
     private bool started;
+    private bool called;
     
     private Vector3 forward;
     private Vector3 back;
@@ -25,6 +26,7 @@ public class MovePlayer : Photon.MonoBehaviour {
         mySpeed = 3.5f;
         timeBeforeStart = 5f;
         started = false;
+        called = false;
         
         forward = new Vector3(0, 0, 1);
         back = new Vector3(0, 0, -1);
@@ -78,8 +80,8 @@ public class MovePlayer : Photon.MonoBehaviour {
             }
             
             // Check if they won
-            if (transform.position.x is < 2.2f and > -2.2f && transform.position.z is < 2.2f and > -2.2f) {
-                
+            if (called == false && transform.position.x is < 2.2f and > -2.2f && transform.position.z is < 2.2f and > -2.2f) {
+                called = true;
                 GameManager.GetComponent<GameManager>().Winner(PhotonNetwork.playerName);
             }
         }

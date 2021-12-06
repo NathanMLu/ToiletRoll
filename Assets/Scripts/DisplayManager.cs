@@ -10,7 +10,9 @@ public class DisplayManager : MonoBehaviour {
 	private GameObject GameManager;
 
 	public void DisplayPanelOn() {
-		DisplayCanvas.SetActive(true);
+		if (PhotonView.isMine) {
+			DisplayCanvas.SetActive(true);
+		}
 	}
 
 	public void DisplayPanelOff() {

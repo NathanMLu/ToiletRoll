@@ -20,7 +20,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4944605260832821547
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1607,3 +1607,4 @@ MonoBehaviour:
   PlayerCamera: {fileID: 5615044481602530768}
   PlayerNameText: {fileID: 1175238422458444170}
   DisplayManager: {fileID: 7841816159938406853}
+  WinnerText: {fileID: 0}
