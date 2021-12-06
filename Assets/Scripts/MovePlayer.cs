@@ -7,7 +7,7 @@ public class MovePlayer : Photon.MonoBehaviour {
     private float timeBeforeStart;
     private bool started;
     private bool called;
-    
+
     private Vector3 forward;
     private Vector3 back;
     private Vector3 right;
@@ -18,16 +18,21 @@ public class MovePlayer : Photon.MonoBehaviour {
     public GameObject PlayerCamera;
     public TextMeshPro PlayerNameText;
     public DisplayManager DisplayManager;
-
+    
+    private AudioSource source;
     private GameObject GameManager;
-
+    public AudioClip rolling;
+    public AudioClip win;
+    
     private void Awake() {
+        source = GetComponent<AudioSource>();
+        source.clip = rolling;
         myRigidbody = GetComponent<Rigidbody>();
         mySpeed = 3.5f;
         timeBeforeStart = 5f;
         started = false;
         called = false;
-        
+
         forward = new Vector3(0, 0, 1);
         back = new Vector3(0, 0, -1);
         right = new Vector3(1, 0, 0);
@@ -79,10 +84,37 @@ public class MovePlayer : Photon.MonoBehaviour {
                 myRigidbody.velocity = left * mySpeed;
             }
             
+            if (Input.GetKeyDown(KeyCode.W) ||
+                Input.GetKeyDown(KeyCode.A) ||
+                Input.GetKeyDown(KeyCode.S) ||
+                Input.GetKeyDown(KeyCode.D) ||
+                Input.GetKeyDown(KeyCode.RightArrow) ||
+                Input.GetKeyDown(KeyCode.LeftArrow) ||
+                Input.GetKeyDown(KeyCode.DownArrow) ||
+                Input.GetKeyDown(KeyCode.UpArrow)) {
+                if(!source.isPlaying) {
+                    source.Play();
+                }
+            }
+            
+            if (Input.GetKeyUp(KeyCode.W) ||
+                Input.GetKeyUp(KeyCode.A) ||
+                Input.GetKeyUp(KeyCode.S) ||
+                Input.GetKeyUp(KeyCode.D) ||
+                Input.GetKeyUp(KeyCode.RightArrow) ||
+                Input.GetKeyUp(KeyCode.LeftArrow) ||
+                Input.GetKeyUp(KeyCode.DownArrow) ||
+                Input.GetKeyUp(KeyCode.UpArrow)) {
+
+                source.Stop();
+            }
+            
             // Check if they won
             if (called == false && transform.position.x is < 2.2f and > -2.2f && transform.position.z is < 2.2f and > -2.2f) {
                 called = true;
                 GameManager.GetComponent<GameManager>().Winner(PhotonNetwork.playerName);
+                source.PlayOneShot(win);
+
             }
         }
     }

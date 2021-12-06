@@ -473,6 +473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activationPad: {fileID: 2073637414}
+  AudioHandler: {fileID: 1994895257}
 --- !u!65 &43993194
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1299,6 +1300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activationPad: {fileID: 364851402}
+  AudioHandler: {fileID: 1994895257}
 --- !u!65 &131547201
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4566,6 +4568,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   green: {fileID: 2100000, guid: 94e9018cb93e56b46a8c8fbe525de1b0, type: 2}
+  AudioHandler: {fileID: 1994895257}
 --- !u!65 &364851403
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7409,6 +7412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   green: {fileID: 2100000, guid: 94e9018cb93e56b46a8c8fbe525de1b0, type: 2}
+  AudioHandler: {fileID: 1994895257}
 --- !u!65 &639702661
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8689,6 +8693,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   green: {fileID: 2100000, guid: 94e9018cb93e56b46a8c8fbe525de1b0, type: 2}
+  AudioHandler: {fileID: 1994895257}
 --- !u!65 &715594419
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11173,6 +11178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activationPad: {fileID: 639702660}
+  AudioHandler: {fileID: 1994895257}
 --- !u!65 &876675274
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12507,7 +12513,6 @@ GameObject:
   m_Component:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
-  - component: {fileID: 963194226}
   - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
@@ -12516,14 +12521,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &963194226
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
 --- !u!20 &963194227
 Camera:
   m_ObjectHideFlags: 0
@@ -14288,6 +14285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   green: {fileID: 2100000, guid: 94e9018cb93e56b46a8c8fbe525de1b0, type: 2}
+  AudioHandler: {fileID: 1994895257}
 --- !u!65 &1083653384
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14993,6 +14991,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   green: {fileID: 2100000, guid: 94e9018cb93e56b46a8c8fbe525de1b0, type: 2}
+  AudioHandler: {fileID: 1994895257}
 --- !u!65 &1148847793
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15201,6 +15200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activationPad: {fileID: 715594417}
+  AudioHandler: {fileID: 1994895257}
 --- !u!65 &1181895644
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16676,6 +16676,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerPrefab: {fileID: 8244063604376874556, guid: 0f4b17049426d0b4885521181bc258f3, type: 3}
   SceneCamera: {fileID: 963194225}
+  AudioHandler: {fileID: 1994895257}
   PanelController: {fileID: 2042791474}
   WinnerText: {fileID: 7830967918214293728}
 --- !u!4 &1302032356
@@ -17614,6 +17615,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activationPad: {fileID: 1614390172}
+  AudioHandler: {fileID: 1994895257}
 --- !u!65 &1375974383
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19756,6 +19758,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activationPad: {fileID: 1083653383}
+  AudioHandler: {fileID: 1994895257}
 --- !u!65 &1553556952
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20558,6 +20561,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   green: {fileID: 2100000, guid: 94e9018cb93e56b46a8c8fbe525de1b0, type: 2}
+  AudioHandler: {fileID: 1994895257}
 --- !u!65 &1614390173
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21310,7 +21314,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1672358551}
   m_Layer: 0
-  m_Name: Blockers
+  m_Name: Level1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22755,6 +22759,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activationPad: {fileID: 1148847792}
+  AudioHandler: {fileID: 1994895257}
 --- !u!65 &1777491324
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25667,11 +25672,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa6db531e604aad4c9c8d1558245ee3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  track: {fileID: 8300000, guid: c20fc576cf4317c4db50d8fd1c7679a1, type: 3}
-  roll: {fileID: 0}
-  click: {fileID: 0}
-  win: {fileID: 0}
-  funny: {fileID: 0}
+  track: {fileID: 8300000, guid: fb07ef346ce31f142ae050b67709c128, type: 3}
+  click: {fileID: 8300000, guid: 6347f00f8369a004685318fe67da055e, type: 3}
+  error: {fileID: 8300000, guid: 0e59421ad11e5ad4189880b851311813, type: 3}
+  success: {fileID: 8300000, guid: 7452e36dc39168b4e90f911babc623d6, type: 3}
+  source: {fileID: 1994895258}
 --- !u!82 &1994895258
 AudioSource:
   m_ObjectHideFlags: 0
@@ -25684,7 +25689,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.477
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -26196,6 +26201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7c455a4e207046aab90f77c1f52ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AudioHandler: {fileID: 1994895257}
   MenuCanvas: {fileID: 314316555}
   PauseCanvas: {fileID: 712452294}
 --- !u!114 &2042791475
@@ -26559,6 +26565,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   green: {fileID: 2100000, guid: 94e9018cb93e56b46a8c8fbe525de1b0, type: 2}
+  AudioHandler: {fileID: 1994895257}
 --- !u!65 &2073637415
 BoxCollider:
   m_ObjectHideFlags: 0

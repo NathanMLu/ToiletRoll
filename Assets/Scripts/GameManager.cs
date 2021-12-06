@@ -3,6 +3,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour {
     [SerializeField] private GameObject PlayerPrefab;
     [SerializeField] private GameObject SceneCamera;
+    [SerializeField] private AudioHandler AudioHandler;
     
     [SerializeField] private PanelController PanelController;
     [SerializeField] private WinnerText WinnerText;
@@ -12,6 +13,7 @@ public class GameManager : MonoBehaviour {
     private void Start() {
         SpawnPlayer();
         
+        AudioHandler.PlayTrack();
         PanelController.PauseCanvasOn();
         PanelController.MenuCanvasOff();
         WinnerText.WinnerPanelOff();
@@ -30,6 +32,7 @@ public class GameManager : MonoBehaviour {
     public void PauseGame() {
         running = false;
         
+        AudioHandler.Pause();
         PanelController.PauseCanvasOff();
         PanelController.MenuCanvasOn();
     }
@@ -37,6 +40,7 @@ public class GameManager : MonoBehaviour {
     public void Winner(string playerName) {
         running = false;
         
+        AudioHandler.Pause();
         PanelController.PauseCanvasOff();
         PanelController.MenuCanvasOff();
         
@@ -46,6 +50,7 @@ public class GameManager : MonoBehaviour {
     public void StartGame() {
         running = true;
         
+        AudioHandler.PlayTrack();
         PanelController.PauseCanvasOn();
         PanelController.MenuCanvasOff();
         WinnerText.WinnerPanelOff();

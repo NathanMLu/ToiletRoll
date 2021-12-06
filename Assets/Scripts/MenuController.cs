@@ -5,6 +5,7 @@ public class  MenuController : MonoBehaviour {
     [SerializeField] private string VersionName = "0.1";
     [SerializeField] private GameObject UsernameMenu;
     [SerializeField] private GameObject ConnectPanel;
+    [SerializeField] private AudioHandler AudioHandler;
     
     [SerializeField] private TMP_InputField UsernameInput;
     [SerializeField] private TMP_InputField CreateGameInput;
@@ -17,6 +18,7 @@ public class  MenuController : MonoBehaviour {
     }
 
     private void Start() {
+        AudioHandler.PlayClick();
         UsernameMenu.SetActive(true);
     }
 
@@ -35,14 +37,17 @@ public class  MenuController : MonoBehaviour {
 
     public void SetUserName() {
         UsernameMenu.SetActive(false);
+        AudioHandler.PlayClick();
         PhotonNetwork.playerName = UsernameInput.text;
     }
     
     public void CreateGame() {
+        AudioHandler.PlayClick();
         PhotonNetwork.CreateRoom(CreateGameInput.text, new RoomOptions() { MaxPlayers = 19 }, null);
     }
 
     public void JoinGame() {
+        AudioHandler.PlayClick();
         RoomOptions roomOptions = new RoomOptions();
         roomOptions.MaxPlayers = 5;
         PhotonNetwork.JoinOrCreateRoom(JoinGameInput.text, roomOptions, TypedLobby.Default);

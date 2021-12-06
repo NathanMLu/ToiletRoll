@@ -33,6 +33,7 @@ public class DisplayManager : MonoBehaviour {
 	}
 	
 	private void Update() {
+		
 		if (Input.GetKeyDown(KeyCode.W) ||
 		    Input.GetKeyDown(KeyCode.A) ||
 		    Input.GetKeyDown(KeyCode.S) ||

@@ -2,19 +2,35 @@ using UnityEngine;
 
 public class AudioHandler : MonoBehaviour {
 	public AudioClip track;
-	public AudioClip roll;
 	public AudioClip click;
-	public AudioClip win;
-	public AudioClip funny;
+	public AudioClip error;
+	public AudioClip success;
 
-	private AudioSource source;
+	public AudioSource source;
 
 	private void Start() {
-		source = GetComponent<AudioSource>();
-		BackgroundMusic();
+		PlayTrack();
+	}
+	
+	public void Pause() {
+		source.Pause();
 	}
 
-	public void BackgroundMusic() {
-		source.PlayOneShot(track);
+	public void PlayTrack() {
+		source.clip = track;
+		source.loop = true;
+		source.Play();
+	}
+	
+	public void PlayClick() {
+		source.PlayOneShot(click);
+	}
+	
+	public void PlaySuccess() {
+		source.PlayOneShot(success);
+	}
+	
+	public void PlayError() {
+		source.PlayOneShot(error);
 	}
 }
