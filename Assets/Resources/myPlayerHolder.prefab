@@ -346,7 +346,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7415273526459624161, guid: 675ee027266492740871dbd31f76df25, type: 3}
       propertyPath: m_Name
-      value: tp_roll_01
+      value: ToiletPaper
       objectReference: {fileID: 0}
     - target: {fileID: 7415273526459659969, guid: 675ee027266492740871dbd31f76df25, type: 3}
       propertyPath: m_RootOrder

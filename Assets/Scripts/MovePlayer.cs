@@ -4,6 +4,8 @@ using TMPro;
 public class MovePlayer : Photon.MonoBehaviour {
     private Rigidbody myRigidbody;
     private float mySpeed;
+    private float timeBeforeStart;
+    private bool started;
     
     private Vector3 forward;
     private Vector3 back;
@@ -14,13 +16,14 @@ public class MovePlayer : Photon.MonoBehaviour {
     public PhotonView photonView;
     public GameObject PlayerCamera;
     public TextMeshPro PlayerNameText;
-    public TrackPlayer TrackPlayer;
 
     private GameObject GameManager;
 
     private void Awake() {
         myRigidbody = GetComponent<Rigidbody>();
         mySpeed = 3.5f;
+        timeBeforeStart = 5f;
+        started = false;
         
         forward = new Vector3(0, 0, 1);
         back = new Vector3(0, 0, -1);
@@ -51,8 +54,13 @@ public class MovePlayer : Photon.MonoBehaviour {
     }
 
     public void Update() {
-        if (photonView.isMine && GameManager.GetComponent<GameManager>().IsRunning() && TrackPlayer.reachedStartingPosition()) {
-            
+        timeBeforeStart -= Time.deltaTime;
+
+        if (timeBeforeStart < 0) {
+            started = true;
+        }
+
+        if (started && photonView.isMine && GameManager.GetComponent<GameManager>().IsRunning()) {
             // For basic player movement
             if ((Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) && transform.position.y < 1.1f) {
                 myRigidbody.velocity = forward * mySpeed;

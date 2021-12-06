@@ -20,15 +20,4 @@ public class TrackPlayer : MonoBehaviour {
             transform.position = distanceFromPlayer;
         }
     }
-
-    public bool reachedStartingPosition() {
-        if (transform.position == new Vector3(11f, 4.875f, -12.2f) ||
-            transform.position == new Vector3(11f, 4.875f, 9.8f) || 
-            transform.position == new Vector3(-11f, 4.875f, -12.2f) ||
-            transform.position == new Vector3(-11f, 4.875f, 9.8f)) {
-            started = true;
-        }
-        return started;
-    }
-    
 }

@@ -40,4 +40,18 @@ public class PanelController : MonoBehaviour {
 
 		DisplayPanelOn();
 	}
+
+	private void Update() {
+		if (Input.GetKeyDown(KeyCode.W) ||
+		    Input.GetKeyDown(KeyCode.A) ||
+		    Input.GetKeyDown(KeyCode.S) ||
+		    Input.GetKeyDown(KeyCode.D) ||
+		    Input.GetKeyDown(KeyCode.RightArrow) ||
+		    Input.GetKeyDown(KeyCode.LeftArrow) ||
+		    Input.GetKeyDown(KeyCode.DownArrow) ||
+		    Input.GetKeyDown(KeyCode.UpArrow)) {
+			
+			DisplayPanelOff();
+		}
+	}
 }

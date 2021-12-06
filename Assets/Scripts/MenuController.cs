@@ -20,9 +20,9 @@ public class  MenuController : MonoBehaviour {
         UsernameMenu.SetActive(true);
     }
 
-    private void OnConnectedToMaster() {
-        PhotonNetwork.JoinLobby(TypedLobby.Default);
+    public void OnConnectedToMaster() {
         Debug.Log("Connected to Photon!");
+        PhotonNetwork.JoinLobby(TypedLobby.Default);
     }
 
     public void ChangeUsernameInput() {
@@ -39,7 +39,7 @@ public class  MenuController : MonoBehaviour {
     }
     
     public void CreateGame() {
-        PhotonNetwork.CreateRoom(CreateGameInput.text, new RoomOptions() { MaxPlayers = 5 }, null);
+        PhotonNetwork.CreateRoom(CreateGameInput.text, new RoomOptions() { MaxPlayers = 19 }, null);
     }
 
     public void JoinGame() {
