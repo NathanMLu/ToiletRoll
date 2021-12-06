@@ -71,16 +71,16 @@ public class MovePlayer : Photon.MonoBehaviour {
 
         if (started && photonView.isMine && GameManager.GetComponent<GameManager>().IsRunning()) {
             // For basic player movement
-            if ((Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) && transform.position.y < 1.1f) {
+            if ((Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) && transform.position.y < 0.5f) {
                 myRigidbody.velocity = forward * mySpeed;
             }
-            else if ((Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S)) && transform.position.y < 1.1f) {
+            else if ((Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S)) && transform.position.y < 0.5f) {
                 myRigidbody.velocity = back * mySpeed;
             }
-            else if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D)) && transform.position.y < 1.1f) {
+            else if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D)) && transform.position.y < 0.5f) {
                 myRigidbody.velocity = right * mySpeed;
             }
-            else if ((Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A)) && transform.position.y < 1.1f) {
+            else if ((Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A)) && transform.position.y < 0.5f) {
                 myRigidbody.velocity = left * mySpeed;
             }
             
