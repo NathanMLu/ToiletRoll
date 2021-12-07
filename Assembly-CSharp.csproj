@@ -57,6 +57,7 @@
      <Compile Include="Assets\Photon Unity Networking\UtilityScripts\ConnectAndJoinRandom.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
      <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\Views\PhotonRigidbody2DView.cs" />
+     <Compile Include="Assets\Scripts\LavaWalls.cs" />
      <Compile Include="Assets\Photon Unity Networking\UtilityScripts\QuitOnEscapeOrBack.cs" />
      <Compile Include="Assets\Photon Unity Networking\UtilityScripts\PickupItemSyncer.cs" />
      <Compile Include="Assets\Photon Unity Networking\UtilityScripts\PhotonPlayer\PlayerRoomIndexing.cs" />
@@ -106,11 +107,13 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
      <Compile Include="Assets\Photon Unity Networking\UtilityScripts\ManualPhotonViewAllocator.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
+     <Compile Include="Assets\Scripts\WallsCollider.cs" />
      <Compile Include="Assets\PhotonChatApi\ChatClient.cs" />
      <Compile Include="Assets\Photon Unity Networking\UtilityScripts\PunPlayerScores.cs" />
      <Compile Include="Assets\Photon Unity Networking\UtilityScripts\PickupItem.cs" />
      <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\PhotonHandler.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
+     <Compile Include="Assets\Scripts\HandleSink.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
      <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\Views\PhotonTransformViewPositionControl.cs" />
      <Compile Include="Assets\Photon Unity Networking\UtilityScripts\ShowStatusWhenConnecting.cs" />
@@ -145,6 +148,7 @@
      <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\PhotonPing.cs" />
      <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\Views\PhotonTransformViewScaleModel.cs" />
      <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\PhotonStatsGui.cs" />
+     <Compile Include="Assets\Scripts\Bed.cs" />
      <Compile Include="Assets\PhotonChatApi\ChatPeer.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
@@ -158,10 +162,6 @@
      <Compile Include="Assets\Scripts\MovePlayer.cs" />
      <Compile Include="Assets\Photon Unity Networking\UtilityScripts\OnStartDelete.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
-     <Compile Include="Assets\Scripts\HandleSink.cs" />
-     <Compile Include="Assets\Scripts\Bed.cs" />
-     <Compile Include="Assets\Scripts\LavaWalls.cs" />
-     <Compile Include="Assets\Scripts\WallsCollider.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\Photon Unity Networking\changelog.txt" />

@@ -14,12 +14,13 @@ public class  MenuController : MonoBehaviour {
     [SerializeField] private GameObject StartButton;
 
     public void Awake() {
-        PhotonNetwork.ConnectUsingSettings(VersionName);
+        PhotonNetwork.automaticallySyncScene = true;
     }
 
     private void Start() {
         AudioHandler.PlayClick();
         UsernameMenu.SetActive(true);
+        PhotonNetwork.ConnectUsingSettings(VersionName);
     }
 
     public void OnConnectedToMaster() {
